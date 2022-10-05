@@ -1,0 +1,4 @@
+arxivscraper
+pandas
+requests
+beautifulsoup4
