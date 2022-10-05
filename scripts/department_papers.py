@@ -7,6 +7,7 @@ import re
 import arxivscraper
 import pandas as pd
 import requests
+import json
 from bs4 import BeautifulSoup
 from datetime import date
 import datetime
@@ -170,8 +171,16 @@ def cross_reference_names_papers(author_indices, names, authors, df):
             
 if __name__=='__main__':
     first_author_papers, author_papers = aggregate_department_papers()
-    print(first_author_papers)
-    print(author_papers)
+    
+    
+    today = date.today().strftime("%Y-%m-%d")
+    
+    
+    with open(f"data/first_authors_{today}.json", "w") as outfile:
+        json.dump(first_author_papers, outfile)
+        
+    with open(f"data/authors_{today}.json", "w") as outfile:
+        json.dump(author_papers, outfile)
     
     
     
