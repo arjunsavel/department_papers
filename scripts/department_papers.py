@@ -12,8 +12,6 @@ from bs4 import BeautifulSoup
 from datetime import date
 import datetime
 from time import localtime
-from tqdm import tqdm
-import numpy as np
 
 def aggregate_department_papers():
     """
